@@ -1,7 +1,7 @@
 # Итератор для удаления дубликатов
 class Unique(object):
-    newlst = []
     lst = []
+
     def __init__(self, items, **kwargs):
         # Нужно реализовать конструктор
         # В качестве ключевого аргумента, конструктор должен принимать bool-параметр ignore_case,
@@ -11,6 +11,7 @@ class Unique(object):
         # По-умолчанию ign      ore_case = False
 
         #assert len(items) > 0
+        self.index = -1
         self.newlst = []
         self.lst = list(items)
 
@@ -18,7 +19,10 @@ class Unique(object):
         self.ignore_case = False
         for key in kwargs:
             self.ignore_case = kwargs[key]
-        self.lst.sort()
+        if self.ignore_case == False:
+            self.lst.sort(key = lambda x: x.lower())
+        else:
+            self.lst.sort()
         counter = 0
         self.newlst.append(self.lst[0])
         if self.ignore_case == True:
@@ -26,7 +30,7 @@ class Unique(object):
                 if self.newlst[counter] != i:
                     counter += 1
                     self.newlst.append(i)
-        else:
+        elif self.ignore_case == False:
 
             for i in self.lst:
                 if isinstance(i,str):
@@ -37,7 +41,7 @@ class Unique(object):
                     if self.newlst[counter] != i:
                         counter += 1
                         self.newlst.append(i)
-        print(self.newlst)
+
 
 
 

@@ -4,7 +4,7 @@ import sys
 from librip.ctxmngrs import timer
 from librip.decorators import print_result
 from librip.gens import field, gen_random
-from librip.iterators import Unique as unique
+from librip.iterators import Unique
 
 path = 'data_light.json'
 
@@ -23,7 +23,8 @@ with open(path) as f:
 
 @print_result
 def f1(arg):
-    return sorted(list(field(arg, "job-name")),key = str.lower)
+    return sorted(Unique(field(arg, "job-name"), ignore_case = False), key = str.lower)
+    #return sorted(list(field(arg, "job-name")),key = str.lower)
 
 
 @print_result
