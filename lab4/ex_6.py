@@ -40,7 +40,7 @@ def f3(arg):
 @print_result
 def f4(arg):
     money = list(map(lambda x: "зарплата " + str(x),gen_random(100000, 200000, len(arg))))
-    return list(zip(arg,money))
+    return list(zip(arg, money))
 
 
 with timer():

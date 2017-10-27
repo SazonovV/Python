@@ -9,6 +9,6 @@ goods = [
 ]
 
 # Реализация задания 1
-a = (field(goods, 'title'))
+a = (field(goods, 'title', 'price'))
 for i in a:
     print(i)
