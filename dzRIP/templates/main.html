@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+{% block main %}
+  <main class="bd-masthead" id="content" role="main">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-6 mx-auto col-md-6 order-md-2">
+        <img class="img-fluid mb-3 mb-md-0" src="home.png"{% static image %} onError="this.src='{% static 'home.png' %}'" alt="" width="1024" height="860">
+      </div>
+      <div class="col-md-6 order-md-1 text-center text-md-left pr-md-5">
+        <h1 class="mb-3 bd-text-purple-bright">Brand</h1>
+        <p class="lead">
+        Blabla bla
+        </p>
+        <p class="lead mb-4">
+        Trololo
+        </p>
+
+        <p class="text-muted mb-0">
+          Currently trying to stop making shit
+        </p>
+      </div>
+    </div>
+    <script async src="https://cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=getbootstrapcom" id="_carbonads_js"></script>
+
+  </div>
+</main>
+{% endblock %}
